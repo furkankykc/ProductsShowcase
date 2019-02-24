@@ -1,0 +1,21 @@
+{% for nDropDown in page.navbar.dropdown.all %}
+    <li class="dropdown nav-item">
+        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+            <i class="material-icons">apps</i> {{ nDropDown.name }}
+        </a>
+
+        <div class="dropdown-menu dropdown-with-icons">
+            {% for dropdown in nDropDown.items.all %}
+                <a href="{{ dropdown.url }}" class="dropdown-item">
+                    <i class="material-icons">layers</i> {{ dropdown.name }}
+                </a>
+
+            {% endfor %}
+
+            {#        <a href="https://demos.creative-tim.com/material-kit/docs/2.1/getting-started/introduction.html"#}
+            {#           class="dropdown-item">#}
+            {#            <i class="material-icons">content_paste</i> Documentation#}
+            {#        </a>#}
+        </div>
+    </li>
+{% endfor %}

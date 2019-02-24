@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block head %}
+    {% include page.navbar.template %}
+    {% include page.navbar.template %}
+    {% include page.slider.template %}
+
+{% endblock %}
+{% block content %}
+    {#        {% include 'pricing.html' %}#}
+    {#        {% include 'content.html' %}#}
+    {#        {% include "contact.html" %}#}
+    {% for components in page.components.all %}
+        {% include components.template %}
+    {% endfor %}
+    {#    {% include "work.html" %}#}
+{% endblock %}
+
+{% block footer %}
+    {% include page.footer.template %}
+
+    {#{{ page.footer.temlate }}#}
+    {#{{ page.slider.temlate }}#}
+    {#{{ page.navbar.temlate }}#}
+
+{% endblock %}

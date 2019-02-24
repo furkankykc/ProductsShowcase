@@ -1,0 +1,10 @@
+{% for item in page.navbar.item.all %}
+    <li class="nav-item">
+        <a class="nav-link" rel="tooltip" title="" data-placement="bottom"
+           href="{{ item.url }}" target="_blank"
+           data-original-title="{{ item.desc }}">
+            <i class="material-icons">cloud_download</i> {{ item.name }}
+
+        </a>
+    </li>
+{% endfor %}

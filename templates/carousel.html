@@ -1,0 +1,47 @@
+{% load static %}
+{% load tags %}
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+
+        {% mkrange 1 3 1 as carousel_range %}
+
+        {% for index in carousel_range %}
+            <li data-target="#carouselExampleIndicators" data-slide-to="{{ index }}"></li>
+        {% endfor %}
+    </ol>
+    <div class="carousel-inner">
+
+        {#    <div class="carousel-item active">#}
+        {#                <img class="d-block w-100" src="{% static 'img/address.jpg' %}" alt="{{ image.image.description }}">#}
+        {#            </div>#}
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="{{ page.slider.mainImage.url }}" alt="{{ mainImage.description }}">
+
+        </div>
+        {% for image in page.slider.images.all %}
+
+            <div class="carousel-item">
+                <img class="d-block w-100" src="{{ image.url }}" alt="{{ image.description }}">
+            </div>
+        {% endfor %}
+
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="carousel-caption text-white ">
+
+                {% include 'slider-item.html' %}
+
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>

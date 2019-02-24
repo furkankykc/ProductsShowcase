@@ -1,0 +1,7 @@
+{% for link in page.footer.links.all %}
+    <li>
+        <a href="{{ link.url }}">
+            {{ link.text }}
+        </a>
+    </li>
+{% endfor %}
